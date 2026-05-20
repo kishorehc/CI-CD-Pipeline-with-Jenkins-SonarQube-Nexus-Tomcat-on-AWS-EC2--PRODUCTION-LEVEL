@@ -99,7 +99,8 @@ All 4 instances are **Running** with 3/3 status checks passed.
 
 > **Note:** Jenkins and Tomcat both use port 8080, but they run on **separate EC2 instances** with different public IPs.
 
-![EC2 Instances](Screenshot_2026-05-21_003848.png)
+<img width="3839" height="2028" alt="Screenshot 2026-05-21 003848" src="https://github.com/user-attachments/assets/6d39d427-ade7-4c73-b964-80007629c91e" />
+
 
 ---
 
@@ -122,7 +123,8 @@ A single security group **`launch-wizard-1`** (`sg-03c2c594e701feedc`) is shared
 
 The green banner at the top confirms: **"Inbound security group rules successfully modified on security group."**
 
-![Security Group Inbound Rules](Screenshot_2026-05-21_003839.png)
+<img width="3839" height="2025" alt="Screenshot 2026-05-21 003839" src="https://github.com/user-attachments/assets/962905db-0e1c-45c2-97a5-3cbb1cb54326" />
+
 
 ---
 
@@ -138,7 +140,7 @@ After logging into Jenkins at `http://3.109.124.29:8080`, the dashboard shows th
 | Last Failure | Build #11 — 2 min 35 sec ago |
 | Last Duration | 46 sec |
 
-![Jenkins Dashboard](Screenshot_2026-05-21_003919.png)
+<img width="3833" height="2023" alt="Screenshot 2026-05-21 003919" src="https://github.com/user-attachments/assets/a89cebad-6875-49e6-b385-503e35f97d2b" />
 
 ---
 
@@ -157,7 +159,8 @@ Both nodes are visible in **Manage Jenkins → Nodes**:
 
 > ⚠️ Both nodes show **0B Free Swap Space** and **1.86 GiB Free Temp Space** warnings — normal for a demo environment.
 
-![Jenkins Nodes Overview](Screenshot_2026-05-21_010903.png)
+<img width="3827" height="2023" alt="Screenshot 2026-05-21 010903" src="https://github.com/user-attachments/assets/eb0d168d-fc16-4147-9da6-4b6766820bbe" />
+
 
 #### Configuring the Agent via EC2 Instance Connect
 
@@ -168,7 +171,8 @@ The agent EC2 instance (`i-07d5f10c7cc25bd0e`, Public IP: `13.204.42.92`) was ac
 - `remoting.jar` — Agent connection JAR
 - `workspace/` — Pipeline build workspace
 
-![Agent EC2 Terminal Setup](Screenshot_2026-05-21_010911.png)
+<img width="3839" height="2024" alt="Screenshot 2026-05-21 010911" src="https://github.com/user-attachments/assets/be6addad-6409-4167-bce1-d712f2378d9e" />
+
 
 ---
 
@@ -184,7 +188,8 @@ All secrets are stored securely via **Manage Jenkins → Credentials → System 
 | `email` | Username/Password | jenkins/****** | Jenkins SMTP sender account |
 | `EMAIL_KISHORE` | Username/Password | kishorhc2004@gmail.com/****** | Personal Gmail for build notifications |
 
-![Jenkins Credentials](Screenshot_2026-05-21_004057.png)
+<img width="3839" height="2023" alt="Screenshot 2026-05-21 004057" src="https://github.com/user-attachments/assets/6f9b093f-2350-4abe-9fe4-f64d21ca2268" />
+
 
 ---
 
@@ -216,7 +221,8 @@ The pipeline job page (`production_setup`) shows the **SonarQube Quality Gate ba
 
 The build history on the left shows multiple runs — a mix of ✅ successes and ❌ failures that occurred during iterative development. **Build #12 is the last stable build.**
 
-![Pipeline Job Status Page](Screenshot_2026-05-21_004001.png)
+<img width="3839" height="2023" alt="Screenshot 2026-05-21 011045" src="https://github.com/user-attachments/assets/0dc8b479-d29d-4d69-8a98-2f6afe7ea15f" />
+
 
 ---
 
@@ -244,7 +250,8 @@ workspace/
 
 All files were checked out on **May 20, 2026, 5:15:21 PM**. The compiled `target/` directory is generated locally during the `build` stage and is not shown here as it is excluded via `.gitignore`.
 
-![Jenkins Workspace Files](Screenshot_2026-05-21_004038.png)
+<img width="3839" height="2015" alt="Screenshot 2026-05-21 004038" src="https://github.com/user-attachments/assets/06209cc0-45d0-42e5-b16b-a860df10ca54" />
+
 
 ---
 
@@ -254,7 +261,8 @@ All files were checked out on **May 20, 2026, 5:15:21 PM**. The compiled `target
 
 Build #15 completed in **46 seconds** with all 6 stages green. The **Post Actions** stage (highlighted by the blue arrow) ran the Extended Email step on the **Jenkins** built-in node, sending the notification to `kishorhc2004@gmail.com`.
 
-![Pipeline Build #15 Stage View](Screenshot_2026-05-21_011045.png)
+<img width="3839" height="2023" alt="Screenshot 2026-05-21 011045" src="https://github.com/user-attachments/assets/382e14df-bed5-4e32-8fb5-4f611d070897" />
+
 
 ---
 
@@ -262,7 +270,8 @@ Build #15 completed in **46 seconds** with all 6 stages green. The **Post Action
 
 Build #17 completed in **1 minute 15 seconds** with all 6 stages green. The Post Actions stage confirms it ran on **`agent_kishore`** — the dedicated agent EC2 instance — sending the notification to `kishorhc2004@gmail.com`.
 
-![Pipeline Build #17 Stage View](Screenshot_2026-05-21_011030.png)
+<img width="3832" height="2027" alt="Screenshot 2026-05-21 011030" src="https://github.com/user-attachments/assets/1ce5b61a-c54f-4699-ba08-eae6adc32626" />
+
 
 > **Key difference:** Build #15's Post Actions ran on `Jenkins` (built-in node), while Build #17's Post Actions ran on `agent_kishore`. This demonstrates both node configurations working correctly.
 
@@ -289,7 +298,9 @@ Accessible at `http://43.204.221.52:9000`, the SonarQube dashboard for **Spring 
 
 > ℹ️ The embedded database warning is expected — SonarQube Community Edition uses H2 for demo purposes.
 
-![SonarQube Quality Gate Passed](Screenshot_2026-05-21_004111.png)
+
+<img width="3839" height="2022" alt="Screenshot 2026-05-21 004122" src="https://github.com/user-attachments/assets/7776381e-5e1a-4c0b-a4be-536d57d40be1" />
+
 
 ---
 
@@ -308,7 +319,7 @@ org/
                 └── spring-framework-petclinic-SNAPSHOT-1.0.war.sha1  ← SHA1 checksum
 ```
 
-![Nexus Artifact Repository Browse](Screenshot_2026-05-21_004122.png)
+<img width="3839" height="2012" alt="Screenshot 2026-05-21 004128" src="https://github.com/user-attachments/assets/dffe3493-9b1a-4e27-995e-436afa8aaf37" />
 
 ---
 
@@ -322,7 +333,8 @@ http://65.2.121.19:8080/petclinic/
 
 The deployed application shows the full Spring PetClinic UI with navigation tabs: **HOME**, **FIND OWNERS**, **VETERINARIANS**, and **ERROR**.
 
-![PetClinic Application Running on Tomcat](Screenshot_2026-05-21_004128.png)
+<img width="3839" height="2024" alt="Screenshot 2026-05-21 004111" src="https://github.com/user-attachments/assets/92bbdf1d-ae0a-44c8-86bb-e1c689a7b7d0" />
+
 
 ---
 
@@ -343,7 +355,8 @@ The Gmail inbox confirms notifications were received for every build:
 
 > The `Test email #5` at the bottom was sent during initial SMTP configuration testing from Jenkins.
 
-![Gmail Build Notifications](Screenshot_2026-05-21_004142.png)
+<img width="3839" height="2026" alt="Screenshot 2026-05-21 004142" src="https://github.com/user-attachments/assets/e846ad55-2b1f-40ab-a6b5-5dbce069e9fb" />
+
 
 ---
 
